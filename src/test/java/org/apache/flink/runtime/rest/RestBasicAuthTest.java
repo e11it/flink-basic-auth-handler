@@ -44,6 +44,8 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 /** This test validates basic auth for rest endpoints. */
 class RestBasicAuthTest {
+    private static final String BIND_ADDRESS = "localhost";
+    private static final String BIND_PORT = "0";
 
     @RegisterExtension
     static final TestExecutorExtension<ScheduledExecutorService> EXECUTOR_RESOURCE =
@@ -111,8 +113,8 @@ class RestBasicAuthTest {
 
     private static Configuration getConfig() {
         final Configuration conf = new Configuration();
-        conf.setString(RestOptions.BIND_PORT, "0");
-        conf.setString(RestOptions.ADDRESS, "localhost");
+        conf.set(RestOptions.BIND_PORT, BIND_PORT);
+        conf.set(RestOptions.ADDRESS, BIND_ADDRESS);
         conf.set(BasicAuthOptions.BASIC_AUTH_ENABLED, true);
         conf.set(BasicAuthOptions.BASIC_AUTH_PWD_FILE, PASSWORD_FILE);
         return conf;

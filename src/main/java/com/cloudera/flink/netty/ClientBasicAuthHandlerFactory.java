@@ -49,7 +49,7 @@ public class ClientBasicAuthHandlerFactory implements OutboundChannelHandlerFact
     @Override
     public Optional<ChannelHandler> createHandler(Configuration configuration)
             throws ConfigurationException {
-        if (!configuration.getBoolean(BasicAuthOptions.BASIC_AUTH_ENABLED)) {
+        if (!configuration.get(BasicAuthOptions.BASIC_AUTH_ENABLED)) {
             return Optional.empty();
         }
 

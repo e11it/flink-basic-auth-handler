@@ -56,7 +56,7 @@ public class ServerBasicAuthHandlerFactory implements InboundChannelHandlerFacto
     public Optional<ChannelHandler> createHandler(
             Configuration configuration, Map<String, String> responseHeaders)
             throws ConfigurationException {
-        if (!configuration.getBoolean(BasicAuthOptions.BASIC_AUTH_ENABLED)) {
+        if (!configuration.get(BasicAuthOptions.BASIC_AUTH_ENABLED)) {
             return Optional.empty();
         }
 

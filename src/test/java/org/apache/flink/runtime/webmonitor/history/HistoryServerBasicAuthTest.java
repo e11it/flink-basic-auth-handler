@@ -75,7 +75,7 @@ class HistoryServerBasicAuthTest {
 
     private Configuration getServerConfig() {
         Configuration config = new Configuration();
-        config.setString(
+        config.set(
                 HistoryServerOptions.HISTORY_SERVER_ARCHIVE_DIRS,
                 tempDir.resolve("jm").toFile().toURI().toString());
         config.set(BasicAuthOptions.BASIC_AUTH_PWD_FILE, PASSWORD_FILE);
